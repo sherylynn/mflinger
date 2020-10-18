@@ -108,7 +108,7 @@ static int getDisplayInfo(const int sockfd) {
     /* undefined display marker */
     dinfo_ext.w = dinfo_ext.h = 0;
 
-    sp<IBinder> dpy_ext = SurfaceComposerClient::getBuiltInDisplay(
+    sp<IBinder> dpy_ext = SurfaceComposerClient::getPhysicalDisplayToken(
             ISurfaceComposer::eDisplayIdHdmi);
     check = SurfaceComposerClient::getDisplayInfo(dpy_ext, &dinfo_ext);
     // If we use Android cast with virtual display, the get display info will failed.
